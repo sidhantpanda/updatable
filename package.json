@@ -1,6 +1,6 @@
 {
   "name": "updatable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Updatable data type with listeners",
   "main": "dist/index.js",
   "scripts": {
