@@ -10,10 +10,9 @@ Updatable javascript object with listeners
 
 #### Initialize your Updatable object
 
-`const updatable = new Updatable();`
-
-`const updatable = new Updatable('foo');`
 ```
+const updatable = new Updatable();
+const updatable = new Updatable('foo');
 const updatable = new Updatable('foo', function(newValue) {
   console.log('Updated value:', newValue); // This will print the updated value
 });
@@ -28,7 +27,9 @@ updatable.addListener(function(newValue) {
 ```
 
 #### Update value
-`updatable.update('bar');`
+```
+updatable.update('bar');
+```
 
 This will call the listeners
 
