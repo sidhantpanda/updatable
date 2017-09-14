@@ -4,7 +4,9 @@
 Updatable javascript object with listeners
 
 ### Install
-`TODO: Update with npm package registry`
+```
+npm install updatable
+```
 
 ### Usage
 
