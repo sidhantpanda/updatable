@@ -19,5 +19,13 @@
   "keywords": [
     "updatable",
     "listener"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidhantpanda/updatable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sidhantpanda/updatable/issues"
+  },
+  "homepage": "https://github.com/sidhantpanda/updatable#readme"
 }
