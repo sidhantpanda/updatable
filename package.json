@@ -1,6 +1,6 @@
 {
   "name": "updatable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Updatable data type with listeners",
   "main": "dist/index.js",
   "scripts": {
@@ -19,5 +19,9 @@
   "keywords": [
     "updatable",
     "listener"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github-sidhantpanda:sidhantpanda/updatable.git"
+  }
 }
