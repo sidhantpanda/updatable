@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/sidhantpanda/updatable.svg?branch=master)](https://travis-ci.org/sidhantpanda/updatable)
+[![npm version](https://badge.fury.io/js/updatable.svg)](https://www.npmjs.com/package/updatable)  [![Build Status](https://travis-ci.org/sidhantpanda/updatable.svg?branch=master)](https://travis-ci.org/sidhantpanda/updatable)
 
 # Updatable
 Updatable javascript object with listeners
