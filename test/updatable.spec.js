@@ -25,6 +25,15 @@ describe('Updatable', function () {
             assert.equal(initialValue, updatableInstance.getValue());
             done();
         });
+        it('gives new value if it is updated', function (done) {
+            var initialValue = 'foo';
+            var updatableInstance = new Updatable(initialValue);
+            var newValue = 'bar';
+            updatableInstance.update(newValue);
+            assert.equal(newValue, updatableInstance.getValue(), 'Does not give new value after update');
+            assert.notEqual(initialValue, updatableInstance.getValue(), 'Giving old value after update');
+            done();
+        });
     });
     describe('#addListener()', function () {
         it('should add a value update listener', function (done) {
@@ -32,6 +41,18 @@ describe('Updatable', function () {
             const fn = function () {};
             updatableInstance.addListener(fn);
             assert.equal(fn, updatableInstance.listeners[updatableInstance.listeners.length - 1]);
+            done();
+        });
+        it('does not add null as a listener', function (done) {
+            var updatableInstance = new Updatable();
+            updatableInstance.addListener(null);
+            assert.equal(0, updatableInstance.listeners.length, 'A null listener was added');
+            done();
+        });
+        it('does not add undefined as a listener', function (done) {
+            var updatableInstance = new Updatable();
+            updatableInstance.addListener(undefined);
+            assert.equal(0, updatableInstance.listeners.length, 'A null listener was added');
             done();
         });
     });
@@ -80,6 +101,18 @@ describe('Updatable', function () {
             updatableInstance.setListener(newFn);
             updatableInstance.update(newValue)
             assert.equal(true, newFn.calledWith(newValue), 'New listener was not called with newer value');
+            done();
+        });
+        it('removes all listeners if null is passed as argument', function (done) {
+            var updatableInstance = new Updatable('foo', function () {});
+            updatableInstance.setListener(null);
+            assert.equal(0, updatableInstance.listeners.length, 'Old listener was not removed');
+            done();
+        });
+        it('does not remove any listeners if undefined is passed as argument', function (done) {
+            var updatableInstance = new Updatable('foo', function () {});
+            updatableInstance.setListener(undefined);
+            assert.equal(1, updatableInstance.listeners.length, 'Old listener was removed');
             done();
         });
     });

@@ -41,7 +41,9 @@ Updatable.prototype.update = function (newValue) {
  * @param {function} cb - Listener function to be called upon update
  */
 Updatable.prototype.setListener = function (cb) {
-    if (cb && isFunction(cb)) {
+    if (cb === null) {
+        this.listeners = [];
+    } else if (cb && isFunction(cb)) {
         this.listeners = [cb];
     }
 }
